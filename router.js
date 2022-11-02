@@ -34,6 +34,12 @@ router.get('/contrato', (req, res) => {
     });
 })
 
+router.get('/create-contrato', (req, res) => {
+    pool.query('SELECT nombre FROM usuario ', function(error,data){
+        res.render('/create-contrato', { title: 'Express', cliente : data});
+    })
+})
+
 
 
 router.get('/create', (req, res) =>{
@@ -45,6 +51,9 @@ router.get('/create-vivienda', (req, res) =>{
 })
 router.get('/pago', (req, res) =>{
     res.render('pago');
+})
+router.get('/create-contrato', (req, res) =>{
+    res.render('create-contrato');
 })
 
 
