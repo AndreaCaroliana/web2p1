@@ -11,11 +11,9 @@ exports.save =  (req, res) => {
             console.log(error);
         }else{
             res.redirect('/'); 
-        }
-         
+        }  
     });
 }
-
 
 //CONSULTA - AGREGAR VIVIENDA
 exports.saveVivienda =  (req, res) => {
@@ -48,5 +46,4 @@ exports.saveContrato = (req, res) => {
             res.redirect('/'); 
         }  
     });
-    
 }
