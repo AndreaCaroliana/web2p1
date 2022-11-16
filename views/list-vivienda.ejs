@@ -36,7 +36,7 @@
     <div class="container">
             <a href="/create" class="btn btn-outline-primary mt-4"><i class='bx bxs-user-plus bx-md'></i></a>
             <a href="/list" class="btn btn-outline-primary mt-4"><i class='bx bxs-home bx-md'></i></a>
-            <a href="/contrato" class="btn btn-outline-primary mt-4"><i class='bx bxs-wallet bx-md'></i></a>
+            <a href="/pdf-generar" class="btn btn-outline-primary mt-4"><i class='bx bxs-wallet bx-md'></i></a>
 
             <table class="table table-striped table-bordered table-striped text-center mt-4"> 
                 <thead> 
@@ -55,7 +55,7 @@
                 <tbody>
                   <% results.rows.forEach((i) =>{ %>
                     <tr>
-                    <td><%= i.id %></td>
+                    <td><%= i.id %></td> 
                     <td><%= i.n %></td>
                     <td><%= i.des %></td>
                     <td><%= i.dir %></td> 
@@ -63,7 +63,7 @@
                     <td><%= i.bn %></td> 
                     <td><%= i.m %></td> 
                     <td><%= i.dd %></td> 
-                    <td> <a href="/contrato" class="btn btn-outline-info "><i class='bx bx-edit-alt bx-md'></i></a></td>
+                    <td> <a href="/pdf-generar" class="btn btn-outline-info "><i class='bx bx-edit-alt bx-md'></i></a></td>
                 </tr>
                 <% }); %>
                 </tbody>

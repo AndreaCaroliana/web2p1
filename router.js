@@ -40,7 +40,16 @@ router.get('/create-contrato', (req, res) => {
     })
 })
 
+router.get('/pdf', (req, res) =>{
+    pool.query('SELECT v.id as id, v.nombre as n, v.descripcion as des , v.direccion  as dir, v.habitaciones as h, v.banios as bn, v.mt2 as m ,t.descripcion as dd FROM vivienda v INNER JOIN tvivienda t ON v.id_vivenda = t.id', (error, results) => {  
+        if(error) {
+            throw error;
+        }else{
+            res.render('./PDF/pdfVivienda', {results: results});
+        }
+    });
 
+})
 
 router.get('/create', (req, res) =>{
     res.render('create');
@@ -60,5 +69,8 @@ router.get('/create-contrato', (req, res) =>{
 const crud = require('./controllers/crud'); 
 router.post('/save', crud.save);
 router.post('/saveVivienda', crud.saveVivienda);
+
+
+
 
 module.exports = router;
